@@ -4,7 +4,9 @@ from setuptools import setup
 requires = []
 
 entry_points = {
-    'console_scripts': []
+    'console_scripts': [
+        'pelican-article=pelican_tools.article:main'
+    ]
 }
 
 packages = []
