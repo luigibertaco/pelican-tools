@@ -5,7 +5,7 @@ requires = []
 
 entry_points = {
     'console_scripts': [
-        'pelican-article=pelican_tools.article:main'
+        'pelican-content=pelican_tools.content:main'
     ]
 }
 

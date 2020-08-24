@@ -40,7 +40,7 @@ def validate(markup, **parsed_args):
         )
 
 
-def generate_article(
+def generate_content(
     content_type,
     title,
     slug=None,
@@ -213,7 +213,7 @@ def interactive(values):
 @click.option(
     "--path",
     default="content",
-    help="Path to save the article file. (default: `content/posts`)",
+    help="Path to save the article file. (default: `content/` + content-type)",
 )
 @click.option(
     "--markup",
@@ -234,6 +234,6 @@ def main(prompt, **kwargs):
     """
     parsed_args = interactive(kwargs) if prompt else kwargs
     validate(**parsed_args)
-    file_content, file_path = generate_article(**parsed_args)
+    file_content, file_path = generate_content(**parsed_args)
     file_content = review(file_content) if prompt else file_content
     save_file(file_content, file_path)
